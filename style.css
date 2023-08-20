@@ -1,0 +1,69 @@
+body {
+  background-image: url("desktop.jpg");
+  background-size: cover;
+  place-items: center;
+  display: grid;
+  height: 100%;
+  font-size: 18px;
+}
+.loginForm {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  opacity: 0;
+  transform: translateY(-50%);
+  animation: fadeIn 2s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-50%) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+  }
+}
+
+.loginForm input[type="password"],
+.loginForm input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+.loginForm input[type="password"]:focus,
+.loginForm input[type="text"]:focus {
+  outline: none;
+  border-color: transparent;
+  box-shadow: 0 5px 4px #2c5364;
+}
+.loginForm input[type="submit"] {
+  background-color: transparent;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.loginForm input[type="submit"]:hover {
+  background: #0f2027;
+  background: -webkit-linear-gradient(to right, #2c5364, #203a43, #0f2027);
+  background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
+}
+.error-message {
+  position: absolute;
+  top: 50%;
+  display: none;
+  color: #c0392b;
+}
